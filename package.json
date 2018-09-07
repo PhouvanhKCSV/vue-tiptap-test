@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "tiptap": "^0.10.0",
+    "tiptap-extensions": "^0.10.1",
     "vue": "^2.5.17"
   },
   "devDependencies": {

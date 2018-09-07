@@ -1,28 +1,65 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <editor :extensions="extensions">
+    <div slot="content" slot-scope="props">
+      <h1>Yay Headlines!</h1>
+      <p>All these <strong>cool tags</strong> are working now.</p>
+    </div>
+  </editor>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { Editor } from 'tiptap'
+import {
+  // Nodes
+  BlockquoteNode,
+  BulletListNode,
+  CodeBlockNode,
+  HardBreakNode,
+  HeadingNode,
+  ImageNode,
+  ListItemNode,
+  OrderedListNode,
+  TodoItemNode,
+  TodoListNode,
+
+  // Marks
+  BoldMark,
+  CodeMark,
+  ItalicMark,
+  LinkMark,
+  StrikeMark,
+
+  // General Extensions
+  HistoryExtension,
+  PlaceholderExtension,
+} from 'tiptap-extensions'
 
 export default {
-  name: 'app',
   components: {
-    HelloWorld
-  }
+    Editor,
+  },
+  data() {
+    return {
+      extensions: [
+        new BlockquoteNode(),
+        new BulletListNode(),
+        new CodeBlockNode(),
+        new HardBreakNode(),
+        new HeadingNode({ maxLevel: 3 }),
+        new ImageNode(),
+        new ListItemNode(),
+        new OrderedListNode(),
+        new TodoItemNode(),
+        new TodoListNode(),
+        new BoldMark(),
+        new CodeMark(),
+        new ItalicMark(),
+        new LinkMark(),
+        new StrikeMark(),
+        new HistoryExtension(),
+        new PlaceholderExtension(),
+      ],
+    }
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
