@@ -10,7 +10,8 @@
   "dependencies": {
     "tiptap": "^0.10.0",
     "tiptap-extensions": "^0.10.1",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "webpack-bundle-analyzer": "^2.13.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",

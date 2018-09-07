@@ -8,31 +8,26 @@
 </template>
 
 <script>
-import { Editor } from 'tiptap'
+import { Editor } from 'tiptap/dist/tiptap.esm.js'
 import {
   // Nodes
   BlockquoteNode,
   BulletListNode,
-  CodeBlockNode,
   HardBreakNode,
   HeadingNode,
   ImageNode,
   ListItemNode,
   OrderedListNode,
-  TodoItemNode,
-  TodoListNode,
 
   // Marks
   BoldMark,
-  CodeMark,
   ItalicMark,
   LinkMark,
   StrikeMark,
 
   // General Extensions
-  HistoryExtension,
   PlaceholderExtension,
-} from 'tiptap-extensions'
+} from 'tiptap-extensions/dist/extensions.esm.js'
 
 export default {
   components: {
@@ -43,20 +38,15 @@ export default {
       extensions: [
         new BlockquoteNode(),
         new BulletListNode(),
-        new CodeBlockNode(),
         new HardBreakNode(),
         new HeadingNode({ maxLevel: 3 }),
         new ImageNode(),
         new ListItemNode(),
         new OrderedListNode(),
-        new TodoItemNode(),
-        new TodoListNode(),
         new BoldMark(),
-        new CodeMark(),
         new ItalicMark(),
         new LinkMark(),
         new StrikeMark(),
-        new HistoryExtension(),
         new PlaceholderExtension(),
       ],
     }
